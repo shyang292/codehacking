@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="8dffdf10-2313-4ce5-aa87-ff808310ea3b" name="AWSMagento" url="http://awsmagento.abmgood.com">
+        <fileTransfer host="awsmagento.abmgood.com" port="22" privateKey="$USER_HOME$/Downloads/EarnestAmazonWeb.pem" rootFolder="/opt/bitnami/apps/magento/htdocs" accessType="SFTP" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
