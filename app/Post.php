@@ -3,7 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+use Cviebrock\EloquentSluggable\Sluggable;
+use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
 class Post extends Model
 {
     //
@@ -14,6 +15,25 @@ class Post extends Model
         'photo_id',
         'category_id'
     ];
+
+
+
+    use Sluggable;
+
+    /**
+     * Return the sluggable configuration array for this model.
+     *
+     * @return array
+     */
+    public function sluggable()
+    {
+        return [
+            'slug' => [
+                'source' => 'title'
+            ]
+        ];
+    }
+
     public function user(){
         return $this->belongsTo('App\User');
     }
@@ -24,5 +44,9 @@ class Post extends Model
 
     public function photo(){
         return $this->belongsTo('App\Photo');
+    }
+
+    public function comments(){
+        return $this->hasMany('App\Comment');
     }
 }

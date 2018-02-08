@@ -26,6 +26,8 @@ Route::get('/admin', function(){
 
 });
 
+Route::get('/post/{id}', ['as'=>'home.post', 'uses'=>'PostsController@post']);
+
 Route::group(['middleware'=>'admin'], function (){
 
     Route::resource('admin/users', 'AdminUsersController');
@@ -33,5 +35,12 @@ Route::group(['middleware'=>'admin'], function (){
     Route::resource('admin/posts', 'PostsController');
 
     Route::resource('admin/categories', 'CategoriesController');
+
+    Route::resource('admin/photos', 'PhotosController');
+
+    Route::resource('admin/comments', 'PostCommentsController');
+
+    Route::resource('admin/replies', 'CommentRepliesController');
+
 
 });
